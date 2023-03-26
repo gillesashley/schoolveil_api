@@ -1,0 +1,15 @@
+# Compiled Python files
+*.pyc
+__pycache__/
+
+# Django generated files
+*.log
+*.pot
+db.sqlite3
+media/
+
+# Ignore the virtual environment
+venv/
+
+# Ignore environment variables
+.env
