@@ -1,11 +1,10 @@
-from django.urls import path, include
 from rest_framework import routers
 
 from . import views
 
 router = routers.DefaultRouter()
-router.register(r'years-terms', views.YearsTermsViewSet)
+router.register(r'', views.YearsTermsViewSet, basename='year-term')
 
-urlpatterns = [
-    path('', include(router.urls)),
-]
+app_name = 'years_terms'
+
+urlpatterns = router.urls

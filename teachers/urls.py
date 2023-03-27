@@ -1,9 +1,8 @@
-from django.urls import path
-from .views import TeacherListCreateAPIView, TeacherDetailAPIView
+from rest_framework import routers
 
-app_name = 'teachers'
+from teachers.views import TeacherViewSet
 
-urlpatterns = [
-    path('', TeacherListCreateAPIView.as_view(), name='teacher-list'),
-    path('<int:pk>/', TeacherDetailAPIView.as_view(), name='teacher-detail'),
-]
+router = routers.DefaultRouter()
+router.register(r'', TeacherViewSet, basename='teacher')
+
+urlpatterns = router.urls
