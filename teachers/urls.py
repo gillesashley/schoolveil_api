@@ -1,11 +1,9 @@
-from django.urls import path, include
-from rest_framework import routers
-from teachers.views import TeacherViewSet
+from django.urls import path
+from .views import TeacherListCreateAPIView, TeacherDetailAPIView
 
-router = routers.DefaultRouter()
-router.register(r'teachers', TeacherViewSet)
+app_name = 'teachers'
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('teachers/<slug:slug>/', include(router.urls)),
+    path('', TeacherListCreateAPIView.as_view(), name='teacher-list'),
+    path('<int:pk>/', TeacherDetailAPIView.as_view(), name='teacher-detail'),
 ]

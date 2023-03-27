@@ -2,14 +2,17 @@ from django.db import models
 
 from classes.models import Class
 from schools.models import School
+
 from students.models import Student
-from subjects.models import Subject
+
+
+# from subjects.models import Subject
 
 
 class Grading(models.Model):
     name = models.CharField(max_length=20)
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    # subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     class_level = models.ForeignKey(Class, on_delete=models.CASCADE)
     school = models.ForeignKey(School, on_delete=models.CASCADE)
     score = models.DecimalField(max_digits=5, decimal_places=2)
