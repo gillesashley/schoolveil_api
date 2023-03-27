@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from subjects.models import Subject
+from subjects.serializers import SubjectSerializer
 
-# Create your views here.
+
+class SubjectViewSet(viewsets.ModelViewSet):
+    queryset = Subject.objects.all()
+    serializer_class = SubjectSerializer
+    lookup_field = 'slug'

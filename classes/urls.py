@@ -8,4 +8,6 @@ router.register(r'classes', ClassViewSet, basename='class')
 urlpatterns = [
     path('', include(router.urls)),
     path('gradings/', include('gradings.urls')),
+    path('students/', include('students.urls')),
+    path('subjects/', include('subjects.urls')),
 ]
