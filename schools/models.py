@@ -17,6 +17,7 @@ class School(models.Model):
     address = models.CharField(max_length=255)
     phone_number = models.CharField(max_length=20)
     email = models.EmailField(max_length=255)
+    location = models.CharField(max_length=100, default="N/A")
     logo = models.ImageField(upload_to='school_logos/', null=True, blank=True)
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
     slug = models.SlugField(unique=True, null=True, blank=True)

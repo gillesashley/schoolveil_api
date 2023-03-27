@@ -4,15 +4,11 @@ from schools.models import School
 from departments.models import Department
 
 
-# from teachers.models import Teacher
-
-
 class Class(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, max_length=255)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     school = models.ForeignKey(School, on_delete=models.CASCADE)
-    # teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

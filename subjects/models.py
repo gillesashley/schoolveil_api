@@ -4,13 +4,14 @@ from django.utils.text import slugify
 from classes.models import Class
 from departments.models import Department
 from schools.models import School
+from teachers.models import Teacher
 
 
 class Subject(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
     description = models.TextField(blank=True)
-    teacher = models.ForeignKey('teachers.Teacher', on_delete=models.CASCADE)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     class_level = models.ForeignKey(Class, on_delete=models.CASCADE)
     school = models.ForeignKey(School, on_delete=models.CASCADE)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)

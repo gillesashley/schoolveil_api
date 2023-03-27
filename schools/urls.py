@@ -8,6 +8,6 @@ router.register(r'schools', SchoolViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     path('schools/<slug:slug>/', include(router.urls)),
-    path('teachers', include('teachers.urls')),
-    path('departments', include('departments.urls')),
+    path('teachers/', include('teachers.urls')),
+    path('departments/', include('departments.urls')),
 ]
