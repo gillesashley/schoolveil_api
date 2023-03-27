@@ -7,11 +7,10 @@ from schools.serializers import SchoolSerializer
 class ClassSerializer(serializers.ModelSerializer):
     department = DepartmentSerializer(read_only=True)
     school = SchoolSerializer(read_only=True)
-    teacher_name = serializers.SerializerMethodField()
 
     class Meta:
         model = Class
-        fields = ['id', 'name', 'slug', 'department', 'school', 'teacher', 'teacher_name']
+        fields = ['id', 'name', 'slug', 'department', 'school', 'teacher', ]
 
     @staticmethod
     def get_teacher_name(obj):

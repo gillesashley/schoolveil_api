@@ -1,5 +1,4 @@
 from rest_framework import routers
-
 from teachers.views import TeacherViewSet
 
 router = routers.DefaultRouter()
